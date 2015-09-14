@@ -14,6 +14,7 @@ CTreeNode::CTreeNode(int multiplier, std::string name)
 	imultiplier = multiplier;
 	pc_name = new std::string;
 	*pc_name = name;
+	pc_vChildNodes = new std::vector < CTreeNode >;
 }
 
 CTreeNode::CTreeNode(const CTreeNode& node)
@@ -42,5 +43,18 @@ int CTreeNode::getMultipilier()
 
 std::string CTreeNode::ShowDirectChildsNames()
 {
-	return "Not Implemented Yet.";
+	int x = (*pc_vChildNodes).size();
+	if (x == 0)	return "Nothing here.";
+	std::string result;
+	for (int i = 0; i < x;i++)
+	{
+		result=result + (*pc_vChildNodes).at(i).getName() + " ";
+	}
+
+	return result;
+}
+
+void CTreeNode::addChild(CTreeNode node)
+{
+	(*pc_vChildNodes).push_back(node);
 }

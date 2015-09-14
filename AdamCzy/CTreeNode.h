@@ -12,6 +12,7 @@ public:
 	std::string getName();
 	int getMultipilier();
 	std::string ShowDirectChildsNames();
+	void addChild(CTreeNode node);
 
 private:
 	std::vector<CTreeNode> *pc_vChildNodes;
