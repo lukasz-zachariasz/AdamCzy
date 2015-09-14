@@ -64,10 +64,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CRoot.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CTreeNode.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CRoot.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="CTreeNode.h" />
   </ItemGroup>

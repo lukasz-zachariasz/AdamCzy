@@ -23,6 +23,7 @@ CTreeNode::CTreeNode(const CTreeNode& node)
 	pc_vChildNodes = new std::vector < CTreeNode > ;
 	*pc_name = *(node.pc_name);
 	*pc_vChildNodes = *(node.pc_vChildNodes);
+	imultiplier = node.imultiplier;
 }
 
 CTreeNode::~CTreeNode()
@@ -62,6 +63,19 @@ std::string CTreeNode::showAllChildsNames()
 	for (int i = 0; i < x; i++)
 	{
 
+		result = result + (*pc_vChildNodes).at(i).getName() + (*pc_vChildNodes).at(i).showAllChildsNames() + " ";
+	}
+
+	return result;
+}
+
+std::string CTreeNode::count()
+{
+	int x = (*pc_vChildNodes).size();
+	if (x == 0)	return "Nothing here.";
+	std::string result;
+	for (int i = 0; i < x; i++)
+	{
 		result = result + (*pc_vChildNodes).at(i).getName() + (*pc_vChildNodes).at(i).showAllChildsNames() + " ";
 	}
 

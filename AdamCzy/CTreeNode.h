@@ -13,6 +13,8 @@ public:
 	int getMultipilier();
 	std::string showDirectChildsNames();
 	std::string showAllChildsNames();
+	std::string count();
+	std::string count(int multiplier);
 	void addChild(CTreeNode node);
 
 private:
