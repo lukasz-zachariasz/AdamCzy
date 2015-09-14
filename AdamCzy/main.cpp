@@ -12,7 +12,8 @@ int main()
 	(*pc_cnode).addChild(*pc_cnode);
 	std::cout << (*pc_cnode).getName() << std::endl;
 	std::cout << (*pc_cnode).getMultipilier() << std::endl;
-	std::cout << (*pc_cnode).ShowDirectChildsNames() << std::endl;
+	std::cout << (*pc_cnode).showDirectChildsNames() << std::endl;
+	std::cout << (*pc_cnode).showAllChildsNames() << std::endl;
 	
 	
 	

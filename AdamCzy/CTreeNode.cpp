@@ -41,7 +41,7 @@ int CTreeNode::getMultipilier()
 	return imultiplier;
 }
 
-std::string CTreeNode::ShowDirectChildsNames()
+std::string CTreeNode::showDirectChildsNames()
 {
 	int x = (*pc_vChildNodes).size();
 	if (x == 0)	return "Nothing here.";
@@ -49,6 +49,20 @@ std::string CTreeNode::ShowDirectChildsNames()
 	for (int i = 0; i < x;i++)
 	{
 		result=result + (*pc_vChildNodes).at(i).getName() + " ";
+	}
+
+	return result;
+}
+
+std::string CTreeNode::showAllChildsNames()
+{
+	int x = (*pc_vChildNodes).size();
+	if (x == 0)	return "Nothing here.";
+	std::string result;
+	for (int i = 0; i < x; i++)
+	{
+
+		result = result + (*pc_vChildNodes).at(i).getName() + (*pc_vChildNodes).at(i).showAllChildsNames() + " ";
 	}
 
 	return result;

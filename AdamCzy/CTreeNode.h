@@ -11,7 +11,8 @@ public:
 	~CTreeNode();
 	std::string getName();
 	int getMultipilier();
-	std::string ShowDirectChildsNames();
+	std::string showDirectChildsNames();
+	std::string showAllChildsNames();
 	void addChild(CTreeNode node);
 
 private:
