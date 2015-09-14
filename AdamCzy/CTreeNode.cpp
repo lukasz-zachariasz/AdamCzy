@@ -69,17 +69,32 @@ std::string CTreeNode::showAllChildsNames()
 	return result;
 }
 
-std::string CTreeNode::count()
+void CTreeNode::count(int multiplier, const CRoot& root)
 {
-	int x = (*pc_vChildNodes).size();
-	if (x == 0)	return "Nothing here.";
-	std::string result;
-	for (int i = 0; i < x; i++)
+	int x = (*(root).pc_iObjects).size();
+	int multi = imultiplier*multiplier;
+	std::string name = *pc_name;
+	for (unsigned int i = 0; i < x; i++)
 	{
-		result = result + (*pc_vChildNodes).at(i).getName() + (*pc_vChildNodes).at(i).showAllChildsNames() + " ";
+		if ((*pc_name).compare((*(root).pc_sObjects).at(i))==0)
+		{
+			(*(root).pc_iObjects).at(i) = (*(root).pc_iObjects).at(i) + multi;
+		}
+		else
+		{
+			(*(root).pc_sObjects).push_back(name);
+			(*(root).pc_iObjects).push_back(multi);
+		}
 	}
-
-	return result;
+	if ((*(root).pc_iObjects).size() == 0)
+	{
+		(*(root).pc_sObjects).push_back(name);
+		(*(root).pc_iObjects).push_back(multi);
+	}
+	for (unsigned int i = 0; i < (*pc_vChildNodes).size(); i++)
+	{
+		(*pc_vChildNodes).at(i).count(multi, root);
+	}
 }
 
 void CTreeNode::addChild(CTreeNode node)

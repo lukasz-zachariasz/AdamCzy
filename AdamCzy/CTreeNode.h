@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include "CRoot.h"
 
 class CTreeNode
 {
@@ -13,8 +14,7 @@ public:
 	int getMultipilier();
 	std::string showDirectChildsNames();
 	std::string showAllChildsNames();
-	std::string count();
-	std::string count(int multiplier);
+	void count(int multiplier, const CRoot& root);
 	void addChild(CTreeNode node);
 
 private:
