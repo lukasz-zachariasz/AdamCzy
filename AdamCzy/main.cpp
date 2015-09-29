@@ -18,8 +18,7 @@ int main()
 	std::cout << (*pc_cnode).showAllChildsNames() << std::endl;
 	(*pc_cnode).count(1, *pc_croot);
 	std::cout << (*pc_croot).show();
-	
-	
+	std::cout << a;
 	
 	while (true);
 	return 1;
